@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const GoodHeroes = () => {
   const [character, setCharacter] = useState([]);
 
   useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character")
-      .then((response) => response.json())
-      .then((data) => setCharacter(data.results));
+    axios.get("https://superheroapi.com/api/10159842194449266/70")
+      .then((resp) => {
+        const { data } = resp;
+        console.log(data);
+      });
   }, []);
-  console.log(character);
-  console.log(character[1]);
+  // console.log(character[1]);
 
   return (
     <div className="card-group">
