@@ -58,13 +58,14 @@ import axios from "axios";
 import SearcList from './SearchList';
 // import './searchBarcss.css'
 import { searchHeroesAction } from '../redux/actionReducers'
+import Navbarmenu from './Navbarmenu';
 
 
 const Search = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
 
-  const handleImputChange = (event, name) => {
+  const handleImputChange = (event) => {
     event.preventDefault();
     if (event.target.value.length >= 3)
       setName(event.target.value)
@@ -75,16 +76,19 @@ const Search = () => {
     event.preventDefault();
     dispatch(searchHeroesAction(name))
   }
-  const handleOnClickClear = (event) => {
-    event.preventDefault();
+  const handleOnClickClear = (e) => {
+    e.preventDefault();
     setName("")
+
 
   }
 
 
   return (
     <div >
-      <input className="btn btn-dark" type='text' placeholder='Search your heroe...' onChange={(e) => handleImputChange(e, name)} />
+      <Navbarmenu />
+
+      <input className="btn btn-dark" type='text' placeholder='Search your heroe...' onChange={(e) => handleImputChange(e)} />
       <button className="btn btn-dark" onClick={(e) => handleOnClickSearch(e, name)}>Search</button>
       <button className="btn btn-dark" onClick={(e) => handleOnClickClear(e)}>Clear</button>
 

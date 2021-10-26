@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { detailHeroeAction } from "../redux/actionReducers"
 import Details from "./Details";
@@ -20,11 +21,11 @@ const SearcList = () => {
             <div key={item.id} className="gridcard" >
               <img src={item.image.url} className="card-img-top" alt="..." />
               <div className="card-body">
-                <span className=" card-text">{item.name}<button
+                <span className=" card-text">{item.name} <Link to='details'><button
 
                   className="btn btn-dark btn-sm "
                   onClick={() => dispatch(detailHeroeAction(item.id))}
-                >Info</button></span>
+                >Info</button></Link>  </span>
               </div>
             </div>
           </div>
@@ -32,7 +33,7 @@ const SearcList = () => {
       }
 
 
-      <Details />
+
 
 
     </div>

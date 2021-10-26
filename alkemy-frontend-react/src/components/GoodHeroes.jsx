@@ -1,62 +1,28 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from 'react'
+import Card from './Card'
+import { useSelector, useDispatch } from 'react-redux'
+import { detailHeroeAction } from "../redux/actionReducers"
 
 const GoodHeroes = () => {
-  const [character, setCharacter] = useState([]);
-
-  useEffect(() => {
-    axios.get("https://superheroapi.com/api/10159842194449266/70")
-      .then((resp) => {
-        const { data } = resp;
-        console.log(data);
-      });
-  }, []);
-  // console.log(character[1]);
-
+  const goodHeroes = useSelector(store => store.searchList.goodOnes)
+  console.log(goodHeroes, 'goodHeroes');
+  const dispatch = useDispatch();
   return (
-    <div className="card-group">
-      <div className="card">
-        <img src="" className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </p>
-        </div>
-        <div className="card-footer">
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-      <div className="card">
-        <img src="..." className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">
-            This card has supporting text below as a natural lead-in to
-            additional content.
-          </p>
-        </div>
-        <div className="card-footer">
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-      <div className="card">
-        <img src="..." className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This card has even longer content than the
-            first to show that equal height action.
-          </p>
-        </div>
-        <div className="card-footer">
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </div>
+    <div className='container d-flex justify-content-center align-items-center gap-5 bg-info'>
+      <div className="row p-5">
+        {
+          goodHeroes.map(card => (
+            <div key={card.id}  ><Card title={card.name} id={card.id} url={card.image.url} powerstats={card.powerstats} /></div>
+          ))
+
+
+        }
+
       </div>
     </div>
-  );
-};
 
-export default GoodHeroes;
+  )
+}
+
+export default GoodHeroes
+
