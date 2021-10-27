@@ -35,12 +35,12 @@ const Details = () => {
 
 
 
-                    <h5 className={(item.biography.alignment === "good") ? "card-titleG" : "card-titleB"}>
+                    <h3 className={(item.biography.alignment === "good") ? "card-titleG" : "card-titleB"}>
 
 
 
-                      {item.name}</h5>
-                    <p>{item.name}</p>
+                      {item.name}</h3>
+                    {/* <p>{item.name}</p> */}
                     <p>{item.appearance.weight[1]}</p>
                     <p>{item.appearance.height[1]}</p>
                     <p>{item.biography.aliases[0]}</p>

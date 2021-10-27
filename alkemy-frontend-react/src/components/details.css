@@ -10,16 +10,18 @@
 
 .card1 {
   border: 1px solid;
-  max-width: 60%;
+  max-width: 55%;
 }
 
 .card1 img {
-  max-width: 300px;
+  max-width: 320px;
 }
 
 .card-titleG {
-  color: lawngreen;
+  margin-top: 1rem;
+  color: rgb(255, 174, 23);
 }
 .card-titleB {
-  color: crimson;
+  margin-top: 1rem;
+  color: rgb(214, 18, 57);
 }
