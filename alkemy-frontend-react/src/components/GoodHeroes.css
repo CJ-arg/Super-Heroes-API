@@ -1,0 +1,24 @@
+.contText {
+  text-align: center;
+}
+
+.noCardText p {
+  text-align: center;
+  font-size: large;
+  margin-top: 2rem;
+}
+.goToSearch {
+  margin-top: 1rem;
+}
+
+.noCardText {
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  margin-top: 2rem;
+  width: 100%;
+  padding: 20px;
+  display: block;
+  color: antiquewhite;
+  border-radius: 5px;
+  height: 40vh;
+}
