@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { addGoodHeroeAction } from "../redux/actionReducers"
+import { addGoodHeroeAction, addBadHeroeAction } from "../redux/actionReducers"
 import "./details.css"
 import Navbarmenu from "./Navbarmenu";
 
@@ -16,38 +16,60 @@ const Details = () => {
 
   const eye = "item.eye-color"
   const hair = `item.hair-color`
-
-
-
   return (
-    <div>
+    <div className="contDetail">
       <Navbarmenu />
       {
         goodHeroes.map((item) => (
-          <div className="container  text-center detailcard" >
 
-            <div key={item.id} className=" card border-primary width: 18rem mb-2" >
-              <img src={item.image.url} className="card-img-center width=100 img-fluid " alt="Heroe details" />
-              <div className="card-body">
-                <p>{item.name}</p>
-                <p>{item.appearance.weight[1]}</p>
-                <p>{item.appearance.height[1]}</p>
-                <p>{item.biography.aliases[0]}</p>
-                <p>{hair}</p>
-                <p>{eye}</p>
-                <p></p>
-                <Link to='/'>
+          <div className="containerDetail">
+
+            <div key={item.id} className="card1 mb-3 detailcard" >
+              <div className="row g-0">
+                <div className="col-md-4">
+                  <img src={item.image.url} className="img-fluid rounded-start" alt="Heroe details" />
+                </div>
+
+                <div className="col-md-8">
+                  <div className="card-body">
 
 
 
+                    <h5 className={(item.biography.alignment === "good") ? "card-titleG" : "card-titleB"}>
 
-                  <button
 
-                    className="btn btn-dark btn-sm float-right"
-                    onClick={() => dispatch(addGoodHeroeAction(item.id))}
-                  >Add team </button></Link>
+
+                      {item.name}</h5>
+                    <p>{item.name}</p>
+                    <p>{item.appearance.weight[1]}</p>
+                    <p>{item.appearance.height[1]}</p>
+                    <p>{item.biography.aliases[0]}</p>
+                    <p>{hair}</p>
+                    <p>{eye}</p>
+                    <p>{item.biography.alignment}</p>
+                  </div>
+                  <Link to='/'>
+
+                    {(item.biography.alignment === "good") ? <button
+                      className="btn btn-dark btn-sm float-right"
+                      onClick={() => dispatch(addGoodHeroeAction(item.id))}
+                    >Add good team </button> :
+                      <button
+                        className="btn btn-dark btn-sm float-right"
+                        onClick={() => dispatch(addBadHeroeAction(item.id))}
+                      >Add bad team </button>
+
+
+                    }
+
+
+
+
+                  </Link>
+                </div>
               </div>
             </div>
+
           </div>
         ))
       }
@@ -59,3 +81,6 @@ const Details = () => {
 };
 
 export default Details;
+
+
+

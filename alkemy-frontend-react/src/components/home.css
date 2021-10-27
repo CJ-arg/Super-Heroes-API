@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Marvel:wght@700&display=swap");
+
+.homeContainer {
+  font-family: "Marvel", sans-serif;
+}
+.homeContainer h1 {
+  font-size: 60px;
+}

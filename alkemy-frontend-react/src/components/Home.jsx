@@ -14,7 +14,7 @@ const Home = () => {
       <Navbarmenu />
 
       <div className="homeContainer">
-        <h1 className=" text-center text-uppercase" >
+        <h1 className="  text-center text-uppercase" >
           Build Your Own team</h1>
 
         <GoodHeroes />

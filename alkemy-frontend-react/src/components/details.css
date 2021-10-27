@@ -1,7 +1,25 @@
-.detailcard {
-  max-width: 450px;
-  display: flex;
+.contDetail {
   align-items: center;
-  justify-content: center;
-  margin-top: 50px;
+}
+
+.detailcard {
+  margin-left: 20%;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.card1 {
+  border: 1px solid;
+  max-width: 60%;
+}
+
+.card1 img {
+  max-width: 300px;
+}
+
+.card-titleG {
+  color: lawngreen;
+}
+.card-titleB {
+  color: crimson;
 }

@@ -8,18 +8,21 @@ const GoodHeroes = () => {
   console.log(goodHeroes, 'goodHeroes');
   const dispatch = useDispatch();
   return (
-    <div className='container d-flex justify-content-center align-items-center gap-5 bg-info'>
-      <div className="row p-5">
+    // <div className='container d-flex justify-content-center align-items-center gap-5 bg-info'>
+    <div className="container">
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 " >
+
         {
           goodHeroes.map(card => (
-            <div key={card.id}  ><Card title={card.name} id={card.id} url={card.image.url} powerstats={card.powerstats} /></div>
+            <div className="mb-5" key={card.id}  ><Card title={card.name} id={card.id} url={card.image.url} gob={card.biography.alignment} powerstats={card.powerstats} /></div>
           ))
 
 
         }
 
-      </div>
-    </div>
+      </div></div>
+
+
 
   )
 }
