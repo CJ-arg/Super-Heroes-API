@@ -95,11 +95,19 @@ export const addGoodHeroeAction = (id) => async (dispatch) => {
 
     console.log(local, "local");
 
-    localStorage.setItem(
-      "goodteam",
+    if (local === null) {
+      localStorage.setItem(
+        "goodteam",
 
-      JSON.stringify([res.data])
-    );
+        JSON.stringify([res.data])
+      );
+    } else if (local.length < 3) {
+      localStorage.setItem(
+        "goodteam",
+
+        JSON.stringify([...local, res.data])
+      );
+    }
   } catch (error) {
     console.log(error);
   }

@@ -6,7 +6,7 @@ import axios from "axios";
 import SearcList from './SearchList';
 // import './searchBarcss.css'
 import { searchHeroesAction } from '../redux/actionReducers'
-import Navbarmenu from './Navbarmenu';
+
 
 
 const Search = () => {
@@ -32,7 +32,7 @@ const Search = () => {
 
   return (
     <div >
-      <Navbarmenu />
+
       <div className="container text-center  mt-3 mb-2">
         <input className="btn btn-dark btn-lg m-1" type='text' placeholder='Search your heroe...' onChange={(e) => handleImputChange(e)} />
         <button className="btn btn-dark btn-lg m-1" onClick={(e) => handleOnClickSearch(e, name)}>Search</button>

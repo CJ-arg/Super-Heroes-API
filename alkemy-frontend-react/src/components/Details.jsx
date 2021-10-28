@@ -18,7 +18,8 @@ const Details = () => {
   const hair = `item.hair-color`
   return (
     <div className="contDetail">
-      <Navbarmenu />
+
+
       {
         goodHeroes.map((item) => (
 
