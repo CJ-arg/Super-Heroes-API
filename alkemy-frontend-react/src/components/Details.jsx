@@ -24,7 +24,7 @@ const Details = () => {
 
           <div className="containerDetail">
 
-            <div key={item.id} className="card1 mb-3 detailcard" >
+            <div key={item.id} className="card1 mb-3 detailcard " >
               <div className="row g-0">
                 <div className="col-md-4">
                   <img src={item.image.url} className="img-fluid rounded-start" alt="Heroe details" />

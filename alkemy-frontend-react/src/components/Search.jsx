@@ -34,9 +34,9 @@ const Search = () => {
     <div >
       <Navbarmenu />
       <div className="container text-center  mt-3 mb-2">
-        <input className="btn btn-dark m-1" type='text' placeholder='Search your heroe...' onChange={(e) => handleImputChange(e)} />
-        <button className="btn btn-dark m-1" onClick={(e) => handleOnClickSearch(e, name)}>Search</button>
-        <button className="btn btn-dark m-1" onClick={(e) => handleOnClickClear(e)}>Clear</button></div>
+        <input className="btn btn-dark btn-lg m-1" type='text' placeholder='Search your heroe...' onChange={(e) => handleImputChange(e)} />
+        <button className="btn btn-dark btn-lg m-1" onClick={(e) => handleOnClickSearch(e, name)}>Search</button>
+        <button className="btn btn-dark btn-lg m-1" onClick={(e) => handleOnClickClear(e)}>Clear</button></div>
 
 
       <SearcList />

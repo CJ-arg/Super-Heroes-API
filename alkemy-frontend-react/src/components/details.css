@@ -11,6 +11,7 @@
 .card1 {
   border: 1px solid;
   max-width: 55%;
+  overflow: auto;
 }
 
 .card1 img {
@@ -24,4 +25,42 @@
 .card-titleB {
   margin-top: 1rem;
   color: rgb(214, 18, 57);
+}
+@media only screen and (max-width: 1200px) {
+  .card1 img {
+    max-width: 250px;
+  }
+  .card1 {
+    border: 1px solid;
+    max-width: 55%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .card1 img {
+    max-width: 250px;
+  }
+  .card1 {
+    border: 1px solid;
+    max-width: 55%;
+  }
+  .card-titleG {
+    font-size: medium;
+
+    margin-top: 1rem;
+    color: rgb(255, 174, 23);
+  }
+  .card-titleB {
+    font-size: medium;
+    margin-top: 1rem;
+    color: rgb(214, 18, 57);
+  }
+}
+@media only screen and (max-width: 800px) {
+  .card1 img {
+    max-width: 250px;
+  }
+  .card1 {
+    border: 1px solid;
+    max-width: 55%;
+  }
 }
