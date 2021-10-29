@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from './Card'
 import "./goodHeroes.css"
 import { useSelector, useDispatch } from 'react-redux'
@@ -10,6 +10,20 @@ const GoodHeroes = () => {
   const goodHeroes = useSelector(store => store.searchList.goodOnes)
   console.log(goodHeroes, 'goodHeroes');
   const dispatch = useDispatch();
+
+  const [goodList, setGoodList] = useState([])
+  const [badList, setBadList] = useState([])
+
+  useEffect(() => {
+    const dataG = localStorage.getItem('goodteam')
+    setGoodList(JSON.parse(dataG))
+    const dataB = localStorage.getItem('badteam')
+    setBadList(JSON.parse(dataB))
+  }, [])
+  console.log(goodList, badList, 'data');
+
+
+
   return (
     // <div className='container d-flex justify-content-center align-items-center gap-5 bg-info'>
     <div className="container ">

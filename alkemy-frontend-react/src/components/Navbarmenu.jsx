@@ -19,7 +19,8 @@ const Navbarmenu = () => {
                     <a href='/About'>About </a></div>
                 <button onClick={() => setShowLinks(!showLinks)}>  Open  </button>
             </div>
-
+            <div className="resetContainer">
+                <a href='/Home'><button className="btn btn-outline-warning " onClick={() => localStorage.clear()}> Reset  </button></a></div>
         </div>
     )
 }

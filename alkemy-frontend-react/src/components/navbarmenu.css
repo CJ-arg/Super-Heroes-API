@@ -37,6 +37,12 @@ button:hover {
 .Nav .leftSide #hidden {
   display: flex;
 }
+.resetContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 5%;
+}
 
 /* .Nav .rightSide {
     flex: 50%;
