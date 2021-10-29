@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import BadHeroes from "./BadHeroes";
 import GetATeam from "./GetATeam";
@@ -25,7 +26,11 @@ const Home = () => {
     const dataB = localStorage.getItem('badteam')
     setBadList(JSON.parse(dataB))
   }, [])
-  // console.log(goodList, badList, 'data');
+
+  const goodHeroes = useSelector(store => store.searchList.goodOnes)
+  console.log(goodHeroes, 'goodHeroesHome');
+
+
 
 
 

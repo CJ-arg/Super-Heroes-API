@@ -11,16 +11,16 @@ const GoodHeroes = () => {
   console.log(goodHeroes, 'goodHeroes');
   const dispatch = useDispatch();
 
-  const [goodList, setGoodList] = useState([])
-  const [badList, setBadList] = useState([])
+  // const [goodList, setGoodList] = useState([])
+  // const [badList, setBadList] = useState([])
 
-  useEffect(() => {
-    const dataG = localStorage.getItem('goodteam')
-    setGoodList(JSON.parse(dataG))
-    const dataB = localStorage.getItem('badteam')
-    setBadList(JSON.parse(dataB))
-  }, [])
-  console.log(goodList, badList, 'data');
+  // useEffect(() => {
+  //   const dataG = localStorage.getItem('goodteam')
+  //   setGoodList(JSON.parse(dataG))
+  //   const dataB = localStorage.getItem('badteam')
+  //   setBadList(JSON.parse(dataB))
+  // }, [])
+  // console.log(goodList, badList, 'data');
 
 
 
