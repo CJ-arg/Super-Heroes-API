@@ -1,6 +1,11 @@
 import React from "react";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Details from "../components/Details";
 import RoutesDashboard from "./RoutesDashboard";
 import Home from "../components/Home";
@@ -16,6 +21,7 @@ const Routes = () => {
         {/* renderizar condicionalmente el RoutesDashboard stateDeLogin ? (<Route path="/" component={RoutesDashboard} />):
         <Redirect to="/login" />
         */}
+        {/* <Redirect to="/login" /> */}
       </Switch>
     </Router>
   );
