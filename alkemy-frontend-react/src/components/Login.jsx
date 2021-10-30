@@ -17,14 +17,9 @@ const Login = () => {
     const sendPostRequest = async (values) => {
         try {
             const resp = await axios.post('http://challenge-react.alkemy.org/', values);
-            console.log(resp.data);
             localStorage.setItem("token",
-
-                JSON.stringify(resp.data)
-            );
-
+                JSON.stringify(resp.data));
         } catch (err) {
-            // Handle Error Here
             console.error(err);
         }
     };
@@ -52,15 +47,10 @@ const Login = () => {
                         return error
                     }}
 
-
-
-
-
                     onSubmit={(values, { resetForm }) => {
                         console.log(values);
                         resetForm()
                         sendPostRequest(values)
-
                         setSubmitOk(true)
                         setTimeout(() => {
                             setSubmitOk(false)
@@ -70,7 +60,7 @@ const Login = () => {
                     {({ values, handleSubmit, touched, handleChange, handleBlur, errors }) => (<form className="form" onSubmit={handleSubmit} >
                         {console.log(errors)}
                         <div><label htmlFor="email">email</label>
-                            <input className="btn btn-dark btn-lg m-1"
+                            <input className="btn btn-secondary btn-lg m-1"
                                 type="email"
                                 id="email"
                                 name="email"
@@ -83,7 +73,7 @@ const Login = () => {
                             }</div>
 
                         <div><label htmlFor="password">password</label>
-                            <input className="btn btn-dark btn-lg m-1"
+                            <input className="btn btn-secondary btn-lg m-1"
                                 type="text" id="password"
                                 name="password"
                                 placeholder="password..."
@@ -94,7 +84,8 @@ const Login = () => {
                             {touched.password && errors.password && <p className="error">{errors.password} </p>
                             }
                         </div>
-                        <button className="btn btn-dark btn-lg m-1" > Submit</button>
+                        <div className="d-grid gap-2" ><button className="btn btn-info " > Submit</button></div>
+
                         {submitOk ? <p className="succes">Submit Ok</p> : null}
                     </form>)}
 
