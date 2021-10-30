@@ -6,8 +6,9 @@ import "./card.css"
 
 const Card = ({ id, title, url, powerstats, gob }) => {
     const goodHeroes = useSelector(store => store.searchList.goodOnes)
+    const badHeroes = useSelector(store => store.searchList.badOnes)
     console.log(goodHeroes, 'goodHeroes');
-    console.log(title);
+
     const dispatch = useDispatch();
     return (
         <>
@@ -35,6 +36,11 @@ const Card = ({ id, title, url, powerstats, gob }) => {
             {(goodHeroes.length < 3) ? <div className={(goodHeroes.length === 2) ? "specialButonTeam3" : "specialButonTeam2"}><Link to='search'><button
                 className="btn btn btn-outline-dark btn-lg center "
             >Search your Good Team</button></Link> </div> : null}
+            {(badHeroes.length < 3) ? <div className={(badHeroes.length === 2) ? "specialButonTeam3b" : "specialButonTeam2b"}><Link to='search'><button
+                className="btn btn btn-outline-dark btn-lg center "
+            >Search your Bad Team</button></Link> </div> : null}
+
+
         </>
     )
 }

@@ -6,7 +6,8 @@ import axios from "axios";
 import SearcList from './SearchList';
 // import './searchBarcss.css'
 import { searchHeroesAction } from '../redux/actionReducers'
-
+import { withRouter } from "react-router";
+import "./search.css"
 
 
 const Search = () => {
@@ -21,6 +22,7 @@ const Search = () => {
   const handleOnClickSearch = (event, name) => {
     event.preventDefault();
     dispatch(searchHeroesAction(name))
+
   }
   const handleOnClickClear = (e) => {
     e.preventDefault();
@@ -34,7 +36,7 @@ const Search = () => {
     <div >
 
       <div className="container text-center  mt-3 mb-2">
-        <input className="btn btn-dark btn-lg m-1" type='text' placeholder='Search your heroe...' onChange={(e) => handleImputChange(e)} />
+        <input className="btn btn-dark btn-lg m-1 searchInput" type='text' placeholder='Search your heroe...' onChange={(e) => handleImputChange(e)} />
         <button className="btn btn-dark btn-lg m-1" onClick={(e) => handleOnClickSearch(e, name)}>Search</button>
         <button className="btn btn-dark btn-lg m-1" onClick={(e) => handleOnClickClear(e)}>Clear</button></div>
 
@@ -44,4 +46,4 @@ const Search = () => {
     </div>
   )
 }
-export default Search;
+export default withRouter(Search);

@@ -4,7 +4,7 @@
   top: 50%;
   width: 300px;
   height: 100px;
-  margin: -100px 0 0 -200px;
+  margin: -100px 0 0 -150px;
   z-index: 10;
 }
 
@@ -14,6 +14,26 @@
   top: 50%;
   width: 300px;
   height: 100px;
-  margin: -100px 0 0 200px;
+  margin: -100px 0 0 250px;
+  z-index: 10;
+}
+
+.specialButonTeam3b {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 100px;
+  margin: 700px 0 0 250px;
+  z-index: 10;
+}
+
+.specialButonTeam2b {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 100px;
+  margin: 700px 0 0 -150px;
   z-index: 10;
 }
