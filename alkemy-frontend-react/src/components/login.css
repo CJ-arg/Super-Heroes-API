@@ -16,12 +16,12 @@
 }
 
 .form {
-  min-width: 600px;
-  margin-top: 50px;
-  background: #fff;
-  border-radius: 5px;
+  min-width: 450px;
+  margin-top: 55px;
+  background: rgba(202, 202, 195, 0.144);
+  border-radius: 3px;
   padding: 20px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: rgba(17, 199, 255, 0.397) 1px 1px 1px;
 }
 
 .form > div {
@@ -40,18 +40,18 @@
 .form textarea {
   font-family: "Open Sans", sans-serif;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 3px;
   border: 2px solid #e2e2e2;
-  font-size: 18px;
-  padding: 10px;
-  margin-bottom: 5px;
-  color: #1f1f1f;
+  font-size: 15px;
+  padding: 5px;
+  margin-bottom: 3px;
+  color: #6e1111;
   text-align: left;
 }
 
 .form input:focus {
   outline: none;
-  border: 2px solid #0085ff;
+  /* border: 2px solid #0085ff; */
 }
 
 .form .error {

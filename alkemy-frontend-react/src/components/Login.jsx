@@ -60,7 +60,7 @@ const Login = () => {
                     {({ values, handleSubmit, touched, handleChange, handleBlur, errors }) => (<form className="form" onSubmit={handleSubmit} >
                         {console.log(errors)}
                         <div><label htmlFor="email">email</label>
-                            <input className="btn btn-secondary btn-lg m-1"
+                            <input className="btn btn-outline-secondary  m-1"
                                 type="email"
                                 id="email"
                                 name="email"
@@ -73,7 +73,7 @@ const Login = () => {
                             }</div>
 
                         <div><label htmlFor="password">password</label>
-                            <input className="btn btn-secondary btn-lg m-1"
+                            <input className="btn btn-outline-secondary btn-sm m-1"
                                 type="text" id="password"
                                 name="password"
                                 placeholder="password..."
@@ -84,7 +84,7 @@ const Login = () => {
                             {touched.password && errors.password && <p className="error">{errors.password} </p>
                             }
                         </div>
-                        <div className="d-grid gap-2" ><button className="btn btn-info " > Submit</button></div>
+                        <div className="d-grid gap-2" ><button className="btn btn-info mt-3" > Submit</button></div>
 
                         {submitOk ? <p className="succes">Submit Ok</p> : null}
                     </form>)}
