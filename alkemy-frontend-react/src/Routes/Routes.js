@@ -13,6 +13,7 @@ import Login from "../components/Login";
 import Search from "../components/Search";
 import Navbarmenu from "../components/Navbarmenu";
 import ProtectedRoutes from "./ProtectedRoutes";
+import About from "../components/About";
 
 const Routes = () => {
   return (
@@ -20,6 +21,7 @@ const Routes = () => {
       <Navbarmenu />
       <Switch>
         <Route exact path="/details" component={Details} />
+        <Route exact path="/about" component={About} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/home" component={Home} />
         <Redirect to="/home" />

@@ -16,7 +16,7 @@ const Navbarmenu = () => {
                     {/* <Link to='/'> <img className="portada" src={camara} alt='camara image' /></Link> */}
                     <a href='/Home'>Home </a>
                     <a href='/search'> Build</a>
-                    <a href='/About'>About </a></div>
+                    <a href='/about'>About </a></div>
                 <button onClick={() => setShowLinks(!showLinks)}>  Open  </button>
             </div>
             <div className="resetContainer">

@@ -9,13 +9,13 @@ import "./searchList.css"
 const SearcList = () => {
 
   const heroes = useSelector(store => store.searchList.array)
-  console.log(heroes, 'este');
+
   const dispatch = useDispatch();
   return (
 
 
     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4" >
-      {
+      {heroes &&
         heroes.map(item => (
           <div className="card" >
             <div key={item.id} className="gridcard" >
