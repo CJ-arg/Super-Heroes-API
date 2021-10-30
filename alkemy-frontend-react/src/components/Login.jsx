@@ -26,7 +26,7 @@ const Login = () => {
 
     return (
         <>
-            <div className="container" >
+            <div className="containerLogin" >
                 <Formik
                     initialValues={{
                         email: '',

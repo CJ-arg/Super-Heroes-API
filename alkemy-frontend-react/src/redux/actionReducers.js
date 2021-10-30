@@ -1,5 +1,4 @@
 import axios from "axios";
-
 //constant
 const dataInicial = {
   array: [],
@@ -24,7 +23,9 @@ export default function heroesReducer(state = dataInicial, action) {
     case GOODTEAM_H_OK:
       console.log(action.payload, "GOODTEAM_H_OK");
       if (state.goodOnes.length >= 3) {
-        console.log("no se pueden agragr mas de 3 heroes elimine uno ");
+        alert(
+          "You can`t select more than 3 good heroes you must delete one first"
+        );
         return state;
       }
       // if (action.payload.id === ) {

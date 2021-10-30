@@ -7,6 +7,7 @@ const Card = ({ id, title, url, powerstats, gob }) => {
     console.log(title);
     const dispatch = useDispatch();
     return (
+
         <div className='card text-center bg-dark padding-20 '>
             <div className="card-body text-light ">
                 <h5 className={(gob === "good") ? "card-titleG" : "card-titleB"}>

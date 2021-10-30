@@ -42,10 +42,16 @@ const Home = () => {
         <h1 className="  text-center text-uppercase" >
           Build Your Own team</h1>
 
-        <GoodHeroes />
+        {goodList ? <GoodHeroes />
+          : <GetATeam />}
+
+        {badList ? <BadHeroes />
+          : <GetBadTeam />}
 
 
-        <BadHeroes />
+
+
+
 
       </div>
 

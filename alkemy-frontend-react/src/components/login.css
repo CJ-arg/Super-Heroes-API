@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
-
+/* 
 * {
   padding: 0px;
   margin: 0;
   box-sizing: border-box;
-}
 
-.container {
-  background: #fffcfc;
+} */
+
+.containerLogin {
+  background: #ffffff;
   font-family: "Open Sans", sans-serif;
   min-height: 100vh;
   display: flex;
@@ -17,8 +18,8 @@
 
 .form {
   min-width: 450px;
-  margin-top: 55px;
-  background: rgba(202, 202, 195, 0.144);
+  margin-top: 155px;
+  background: rgba(218, 254, 255, 0.541);
   border-radius: 3px;
   padding: 20px;
   box-shadow: rgba(17, 199, 255, 0.397) 1px 1px 1px;

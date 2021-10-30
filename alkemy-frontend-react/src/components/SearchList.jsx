@@ -22,12 +22,8 @@ const SearcList = () => {
               <img src={item.image.url} className="card-img-top" alt="..." />
               <div className="card-body">
                 <div></div>
-
                 <Link to='/'>
                   <span className=" card-text">{item.name} </span><br />
-
-
-
                   {(item.biography.alignment === "good") ? <button
                     className="btn btn-dark btn-sm"
                     onClick={() => dispatch(addGoodHeroeAction(item.id))}
@@ -36,10 +32,7 @@ const SearcList = () => {
                       className="btn btn-dark btn-sm "
                       onClick={() => dispatch(addBadHeroeAction(item.id))}
                     >Add bad team </button>
-
-
                   }
-
                   <Link to='details'>
                     <button
 
