@@ -1,39 +1,41 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { detailHeroeAction } from "../redux/actionReducers"
+import "./card.css"
 
 const Card = ({ id, title, url, powerstats, gob }) => {
+    const goodHeroes = useSelector(store => store.searchList.goodOnes)
+    console.log(goodHeroes, 'goodHeroes');
     console.log(title);
     const dispatch = useDispatch();
     return (
+        <>
+            <div className='card text-center bg-dark padding-20 '>
+                <div className="card-body text-light ">
+                    <h5 className={(gob === "good") ? "card-titleG" : "card-titleB"}>
 
-        <div className='card text-center bg-dark padding-20 '>
-            <div className="card-body text-light ">
-                <h5 className={(gob === "good") ? "card-titleG" : "card-titleB"}>
-                    {/* <h6 className='card-title'> */}
-                    {title}</h5>
-                {/* </h6> */}
-                <img src={url} alt="hero" className="card-img width=5 img-fluid" />
-                <p className='card-text text-primary'>Combat: {powerstats.combat} <br />
-                    Durability: {powerstats.durability}<br />
-                    Intelligence: {powerstats.intelligence}<br />
-                    Power: {powerstats.power}<br />
-                    Speed: {powerstats.speed}<br />
-                    Strength: {powerstats.strength}</p>
+                        {title}</h5>
 
-                <Link to='details'><button
+                    <img src={url} alt="hero" className="card-img width=5 img-fluid" />
+                    <p className='card-text text-primary'>Combat: {powerstats.combat} <br />
+                        Durability: {powerstats.durability}<br />
+                        Intelligence: {powerstats.intelligence}<br />
+                        Power: {powerstats.power}<br />
+                        Speed: {powerstats.speed}<br />
+                        Strength: {powerstats.strength}</p>
+                    <Link to='details'><button
+                        className="btn btn-outline-secondary btn-sm rounded-0"
+                        onClick={() => dispatch(detailHeroeAction(id))}
+                    >Details</button></Link>
+                    <a href="#!" className="btn btn-outline-secondary btn-sm rounded-0">Discard</a>
+                </div>
+            </div >
 
-                    className="btn btn-outline-secondary btn-sm rounded-0"
-                    onClick={() => dispatch(detailHeroeAction(id))}
-                >Details</button></Link>
-
-                <a href="#!" className="btn btn-outline-secondary btn-sm rounded-0">Discard</a>
-
-
-            </div>
-
-        </div >
+            {(goodHeroes.length < 3) ? <div className={(goodHeroes.length === 2) ? "specialButonTeam3" : "specialButonTeam2"}><Link to='search'><button
+                className="btn btn btn-outline-dark btn-lg center "
+            >Search your Good Team</button></Link> </div> : null}
+        </>
     )
 }
 

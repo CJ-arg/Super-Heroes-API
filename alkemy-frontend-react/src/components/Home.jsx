@@ -8,30 +8,21 @@ import GoodHeroes from "./GoodHeroes";
 import './home.css'
 
 
-
-
-
 const Home = () => {
   const [goodList, setGoodList] = useState([])
   const [badList, setBadList] = useState([])
-
+  const goodHeroes = useSelector(store => store.searchList.goodOnes)
+  console.log(goodHeroes, 'goodHeroesHome');
 
   // const goodHeroes = useSelector(store => store.searchList.goodOnes)
   // console.log(goodHeroes, 'goodHeroes');
   // const dispatch = useDispatch();
-
   useEffect(() => {
     const dataG = localStorage.getItem('goodteam')
     setGoodList(JSON.parse(dataG))
     const dataB = localStorage.getItem('badteam')
     setBadList(JSON.parse(dataB))
-  }, [])
-
-  const goodHeroes = useSelector(store => store.searchList.goodOnes)
-  console.log(goodHeroes, 'goodHeroesHome');
-
-
-
+  }, [goodHeroes])
 
 
   return (

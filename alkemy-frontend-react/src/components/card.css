@@ -1,0 +1,19 @@
+.specialButonTeam2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 100px;
+  margin: -100px 0 0 -200px;
+  z-index: 10;
+}
+
+.specialButonTeam3 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 100px;
+  margin: -100px 0 0 200px;
+  z-index: 10;
+}
