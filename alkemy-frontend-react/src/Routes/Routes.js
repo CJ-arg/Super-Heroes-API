@@ -27,15 +27,15 @@ const Routes = () => {
           exact
           path="/details"
           component={Details}
-          isAuth={isAuth}
+          isAuth={true}
         />
         <ProtectedRoutes
           exact
           path="/search"
           component={Search}
-          isAuth={isAuth}
+          isAuth={true}
         />
-        <ProtectedRoutes exact path="/home" component={Home} isAuth={isAuth} />
+        <ProtectedRoutes exact path="/home" isAuth={true} component={Home} />
         <Route exact path="/login" component={Login} />
       </Switch>
     </Router>

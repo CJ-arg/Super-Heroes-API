@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 import "./login.css"
 
 const Login = () => {
-    const history = useHistory();
+    let history = useHistory();
     const [submitOk, setSubmitOk] = useState(false)
     const dispatch = useDispatch();
 
@@ -15,8 +15,12 @@ const Login = () => {
 
     const routeChange = () => {
         console.log(history, "routeChange");
-        let path = 'home';
-        history.push(path);
+        let path = '/home';
+        setTimeout(() => {
+            history.push('/home');
+
+
+        }, 3000);
     }
 
     const sendPostRequest = async (values) => {
@@ -55,14 +59,12 @@ const Login = () => {
 
                     onSubmit={(values, { resetForm }) => {
                         sendPostRequest(values)
-
                         resetForm()
                         setSubmitOk(true)
+                        // setTimeout(() => {
 
-                        setTimeout(() => {
-                            routeChange()
-                            setSubmitOk(false)
-                        }, 5000);
+                        //     setSubmitOk(false)
+                        // }, 5000);
                     }}
                 >
                     {({ values, handleSubmit, touched, handleChange, handleBlur, errors }) => (<form className="form" onSubmit={handleSubmit} >
@@ -91,7 +93,7 @@ const Login = () => {
                             {touched.password && errors.password && <p className="error">{errors.password} </p>
                             }
                         </div>
-                        <div className="d-grid gap-2" ><button className="btn btn-info mt-3" > Submit</button></div>
+                        <div className="d-grid gap-2" ><button className="btn btn-info mt-3" onClick={() => { routeChange() }}> Submit</button></div>
 
                         {submitOk ? <p className="succes">Submit Ok</p> : null}
                     </form>)}
