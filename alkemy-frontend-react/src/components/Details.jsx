@@ -44,8 +44,8 @@ const Details = () => {
                         onClick={() => dispatch(addBadHeroeAction(item.id))}
                       >Add bad team </button>
                     }
-
                   </Link>
+
                 </div>
               </div>
             </div>

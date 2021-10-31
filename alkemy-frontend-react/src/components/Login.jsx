@@ -3,26 +3,29 @@ import { Formik } from 'formik'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { isAuth } from '../redux/actionReducers'
+import { useHistory } from "react-router-dom";
 import "./login.css"
 
 const Login = () => {
+    const history = useHistory();
     const [submitOk, setSubmitOk] = useState(false)
     const dispatch = useDispatch();
 
     const axios = require('axios').default;
 
-    const newPost = {
-        userId: 1,
-        title: 'A new post',
-        body: 'This is the body of the new post'
-    };
+    const routeChange = () => {
+        console.log(history, "routeChange");
+        let path = 'home';
+        history.push(path);
+    }
+
     const sendPostRequest = async (values) => {
+
         try {
             const resp = await axios.post('http://challenge-react.alkemy.org/', values);
             localStorage.setItem("token",
                 JSON.stringify(resp.data));
             dispatch(isAuth())
-
         } catch (err) {
             console.error(err);
         }
@@ -51,13 +54,15 @@ const Login = () => {
                     }}
 
                     onSubmit={(values, { resetForm }) => {
-                        console.log(values);
-                        resetForm()
                         sendPostRequest(values)
+
+                        resetForm()
                         setSubmitOk(true)
+
                         setTimeout(() => {
+                            routeChange()
                             setSubmitOk(false)
-                        }, 10000);
+                        }, 5000);
                     }}
                 >
                     {({ values, handleSubmit, touched, handleChange, handleBlur, errors }) => (<form className="form" onSubmit={handleSubmit} >
