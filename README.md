@@ -1,9 +1,9 @@
 # Super-Heroes-API 
-EN PRECESO FECHA DE ENTREGA 31/10
+EN PROCESO FECHA DE ENTREGA 31/10
 
 CHALLENGE FRONTEND -
 React 🚀
-Siqguiendo consignas Alkemy
+Siguiendo consignas Alkemy
 
 Desarrollar una aplicación para crear un equipo de superhéroes que consumirá una API externa y
 mostrará diferentes atributos a nivel individual de cada miembro y del equipo consolidado.
