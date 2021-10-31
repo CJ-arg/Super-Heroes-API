@@ -1,10 +1,13 @@
 import axios from 'axios'
 import { Formik } from 'formik'
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { isAuth } from '../redux/actionReducers'
 import "./login.css"
 
 const Login = () => {
     const [submitOk, setSubmitOk] = useState(false)
+    const dispatch = useDispatch();
 
     const axios = require('axios').default;
 
@@ -13,17 +16,17 @@ const Login = () => {
         title: 'A new post',
         body: 'This is the body of the new post'
     };
-
     const sendPostRequest = async (values) => {
         try {
             const resp = await axios.post('http://challenge-react.alkemy.org/', values);
             localStorage.setItem("token",
                 JSON.stringify(resp.data));
+            dispatch(isAuth())
+
         } catch (err) {
             console.error(err);
         }
     };
-
     return (
         <>
             <div className="containerLogin" >
@@ -71,7 +74,6 @@ const Login = () => {
                             />
                             {touched.email && errors.email && <p className="error">{errors.email} </p>
                             }</div>
-
                         <div><label htmlFor="password">password</label>
                             <input className="btn btn-outline-secondary btn-sm m-1"
                                 type="text" id="password"
@@ -88,7 +90,6 @@ const Login = () => {
 
                         {submitOk ? <p className="succes">Submit Ok</p> : null}
                     </form>)}
-
                 </Formik>
             </div>
         </>

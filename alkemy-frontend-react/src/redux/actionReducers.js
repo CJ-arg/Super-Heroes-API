@@ -1,11 +1,13 @@
 import axios from "axios";
 //constant
 const dataInicial = {
+  isAuth: null,
   array: [],
   goodOnes: [],
   badOnes: [],
   detail: [],
 };
+const IS_AUTH_SET = "IS_AUTH_SET";
 const SEARCH_H_OK = "SEARCH_H_OK";
 const DETAIL_H_OK = "DETAIL_H_OK";
 const GOODTEAM_H_OK = "GOODTEAM_H_OK";
@@ -14,14 +16,14 @@ const BADTEAM_H_OK = "BADTEAM_H_OK";
 //reducer
 export default function heroesReducer(state = dataInicial, action) {
   switch (action.type) {
+    case IS_AUTH_SET:
+      console.log(action.payload, "IS_AUTH_SET");
+      return { ...state, isAuth: true };
     case SEARCH_H_OK:
-      console.log(action.payload, "SEARCH_H_OK");
       return { ...state, array: action.payload };
     case DETAIL_H_OK:
-      console.log(action.payload, "DETAIL_H_OK");
       return { ...state, detail: action.payload };
     case GOODTEAM_H_OK:
-      console.log(action.payload, "GOODTEAM_H_OK");
       if (state.goodOnes.length >= 3) {
         alert(
           "You can`t select more than 3 good heroes you must delete one first"
@@ -44,10 +46,19 @@ export default function heroesReducer(state = dataInicial, action) {
       return state;
   }
 }
-
 //actions
+export const isAuth = () => (dispatch, getState) => {
+  try {
+    dispatch({
+      type: IS_AUTH_SET,
+      payload: true,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const searchHeroesAction = (name) => async (dispatch, getState) => {
-  console.log("getstate", getState().searchList.goodOnes);
   try {
     const res = await axios.get(
       "https://superheroapi.com/api/10159842194449266/search/" + name

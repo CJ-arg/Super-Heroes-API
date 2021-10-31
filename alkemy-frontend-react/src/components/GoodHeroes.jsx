@@ -1,4 +1,3 @@
-
 import Card from './Card'
 import "./goodHeroes.css"
 import { useSelector, useDispatch } from 'react-redux'
@@ -8,26 +7,16 @@ import { Link } from 'react-router-dom'
 
 const GoodHeroes = () => {
   const goodHeroes = useSelector(store => store.searchList.goodOnes)
-
   const dispatch = useDispatch();
-
-
-
 
   return (
     // <div className='container d-flex justify-content-center align-items-center gap-5 bg-info'>
     <div className="container ">
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 " >
-
         {goodHeroes.length ?
-
           goodHeroes.map(card => (
-
             <div className="mb-5" key={card.id}  ><Card title={card.name} id={card.id} url={card.image.url} gob={card.biography.alignment} powerstats={card.powerstats} /></div>
-
           ))
-
-
           :
           <div className=" contText">
             <div className=" noCardText">
@@ -37,12 +26,9 @@ const GoodHeroes = () => {
                 className="btn btn btn-outline-light btn-lg goToSearch"
               >Get a GOOD Team</button></Link> </div>
           </div>
-
         }
       </div>
-
     </div>
-
   )
 }
 
