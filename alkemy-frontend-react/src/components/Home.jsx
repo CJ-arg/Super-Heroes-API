@@ -50,18 +50,7 @@ const Home = () => {
         {badList ? <BadHeroes />
           : <GetBadTeam />}
 
-
-
-
-
-
       </div>
-
-
-
-
-
-
 
     </>
   );

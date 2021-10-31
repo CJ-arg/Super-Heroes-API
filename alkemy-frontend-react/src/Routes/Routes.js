@@ -26,17 +26,7 @@ const Routes = () => {
         <Route exact path="/home" component={Home} />
         <Redirect to="/home" />
       </Switch>
-      {/* <ProtectedRoutes /> */}
-
-      {/* 
-      <Switch>
-        <Route exact path="/login" component={Login} />
-        <Route path="/" component={RoutesDashboard} />
-        renderizar condicionalmente el RoutesDashboard stateDeLogin ? (<Route path="/" component={RoutesDashboard} />):
-        <Redirect to="/login" />
-       
-        <Redirect to="/login" />
-      </Switch> */}
+      <ProtectedRoutes component={Home} isAuth={false} />
     </Router>
   );
 };
