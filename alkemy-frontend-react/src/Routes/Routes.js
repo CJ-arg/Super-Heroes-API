@@ -1,6 +1,11 @@
-import React, { Fragment } from "react";
+import React from "react";
 
-import { Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Details from "../components/Details";
 import Home from "../components/Home";
 import Search from "../components/Search";
@@ -14,7 +19,7 @@ const Routes = () => {
   const isAuth = useSelector((store) => store.searchList.isAuth);
   console.log(isAuth);
   return (
-    <>
+    <Router>
       <Navbarmenu />
       <Switch>
         <Route exact path="/about" component={About} />
@@ -33,7 +38,7 @@ const Routes = () => {
         <ProtectedRoutes exact path="/home" component={Home} isAuth={isAuth} />
         <Route exact path="/login" component={Login} />
       </Switch>
-    </>
+    </Router>
   );
 };
 
