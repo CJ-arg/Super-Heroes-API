@@ -15,7 +15,7 @@ import Login from "../components/Login";
 import About from "../components/About";
 import { useSelector } from "react-redux";
 
-const Routes = () => {
+const Routes = (props) => {
   const isAuth = useSelector((store) => store.searchList.isAuth);
   console.log(isAuth);
   return (
@@ -35,7 +35,7 @@ const Routes = () => {
           component={Search}
           isAuth={true}
         />
-        <ProtectedRoutes exact path="/home" isAuth={true} component={Home} />
+        <ProtectedRoutes exact path="/home" isAuth={isAuth} component={Home} />
         <Route exact path="/login" component={Login} />
         <Redirect to="/home" />
       </Switch>
