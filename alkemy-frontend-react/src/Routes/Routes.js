@@ -37,6 +37,7 @@ const Routes = () => {
         />
         <ProtectedRoutes exact path="/home" isAuth={true} component={Home} />
         <Route exact path="/login" component={Login} />
+        <Redirect to="/home" />
       </Switch>
     </Router>
   );

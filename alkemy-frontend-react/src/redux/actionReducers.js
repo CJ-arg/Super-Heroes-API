@@ -60,9 +60,7 @@ export const isAuth = () => (dispatch, getState) => {
 
 export const searchHeroesAction = (name) => async (dispatch, getState) => {
   try {
-    const res = await axios.get(
-      "https://superheroapi.com/api/10159842194449266/search/" + name
-    );
+    const res = await axios.get("/10159842194449266/search/" + name);
     dispatch({
       type: SEARCH_H_OK,
       payload: res.data.results,
@@ -75,9 +73,7 @@ export const searchHeroesAction = (name) => async (dispatch, getState) => {
 
 export const detailHeroeAction = (id) => async (dispatch) => {
   try {
-    const res = await axios.get(
-      "https://superheroapi.com/api/10159842194449266/" + id
-    );
+    const res = await axios.get("/10159842194449266/" + id);
     dispatch({
       type: DETAIL_H_OK,
       payload: [res.data],
@@ -93,9 +89,7 @@ export const addGoodHeroeAction = (id) => async (dispatch) => {
 
   // console.log(local,'local');
   try {
-    const res = await axios.get(
-      "https://superheroapi.com/api/10159842194449266/" + id
-    );
+    const res = await axios.get("/10159842194449266/" + id);
     console.log("addgood", res.data);
 
     dispatch({
@@ -130,9 +124,7 @@ export const addBadHeroeAction = (id) => async (dispatch) => {
 
   // console.log(local,'local');
   try {
-    const res = await axios.get(
-      "https://superheroapi.com/api/10159842194449266/" + id
-    );
+    const res = await axios.get("/10159842194449266/" + id);
     console.log("addbad", res.data);
 
     dispatch({
