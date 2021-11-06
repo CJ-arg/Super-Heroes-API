@@ -5,9 +5,9 @@ import { detailHeroeAction } from "../redux/actionReducers"
 import Search from './Search'
 import { Link } from 'react-router-dom'
 
-const GoodHeroes = () => {
-  const goodHeroes = useSelector(store => store.searchList.goodOnes)
-  const dispatch = useDispatch();
+const GoodHeroes = ({ goodHeroes }) => {
+  // const goodHeroes = useSelector(store => store.searchList.goodOnes)
+  // const dispatch = useDispatch();
 
   return (
     // <div className='container d-flex justify-content-center align-items-center gap-5 bg-info'>

@@ -10,8 +10,6 @@ const Details = () => {
   const goodHeroes = useSelector(store => store.searchList.detail)
   console.log(goodHeroes, 'goodHeroes');
   const dispatch = useDispatch();
-  const eye = "item.eye-color"
-  const hair = `item.hair-color`
   return (
     <div className="contDetail">
       {
@@ -30,8 +28,8 @@ const Details = () => {
                     <p>{item.appearance.weight[1]}</p>
                     <p>{item.appearance.height[1]}</p>
                     <p>{item.biography.aliases[0]}</p>
-                    <p>{hair}</p>
-                    <p>{eye}</p>
+                    <p>Hair color: {item.appearance["hair-color"]}</p>
+                    <p>Eye color: {item.appearance["eye-color"]}</p>
                     <p>{item.biography.alignment}</p>
                   </div>
                   <Link to='/'>

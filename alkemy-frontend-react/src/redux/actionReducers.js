@@ -30,10 +30,7 @@ export default function heroesReducer(state = dataInicial, action) {
         );
         return state;
       }
-      // if (action.payload.id === ) {
-      //   console.log("no se pueden agragr mas de 3 heroes elimine uno ");
-      //   return state;
-      // }
+
       return { ...state, goodOnes: [...state.goodOnes, action.payload] };
     case BADTEAM_H_OK:
       console.log(action.payload, "BADTEAM_H_OK");
@@ -84,48 +81,47 @@ export const detailHeroeAction = (id) => async (dispatch) => {
 };
 
 export const addGoodHeroeAction = (id) => async (dispatch) => {
-  // if ()
-  //   let local = JSON.parse(localStorage.getItem('goodteam')
 
-  // console.log(local,'local');
   try {
     const res = await axios.get("/10159842194449266/" + id);
-    console.log("addgood", res.data);
+    
+      let local = JSON.parse(localStorage.getItem("goodteam"));
 
-    dispatch({
-      type: GOODTEAM_H_OK,
-      payload: res.data,
-    });
+      if (local === null) {
 
-    let local = JSON.parse(localStorage.getItem("goodteam"));
+        dispatch({
+          type: GOODTEAM_H_OK,
+          payload: res.data,
+        });
 
-    console.log(local, "local");
+        localStorage.setItem(
+          "goodteam",
 
-    if (local === null) {
-      localStorage.setItem(
-        "goodteam",
+          JSON.stringify([res.data])
+        );
+      } else if (local.length < 3 && !local.some(hero => hero.id == id)) {
 
-        JSON.stringify([res.data])
-      );
-    } else if (local.length < 3) {
-      localStorage.setItem(
-        "goodteam",
+        dispatch({
+          type: GOODTEAM_H_OK,
+          payload: res.data,
+        });
 
-        JSON.stringify([...local, res.data])
-      );
-    }
+          console.log('entré en el else if');
+          localStorage.setItem(
+            "goodteam",
+  
+            JSON.stringify([...local, res.data])
+          );
+      }
+
   } catch (error) {
     console.log(error);
   }
 };
 export const addBadHeroeAction = (id) => async (dispatch) => {
-  // if ()
-  //   let local = JSON.parse(localStorage.getItem('goodteam')
 
-  // console.log(local,'local');
   try {
     const res = await axios.get("/10159842194449266/" + id);
-    console.log("addbad", res.data);
 
     dispatch({
       type: BADTEAM_H_OK,
