@@ -17,7 +17,6 @@ const BADTEAM_H_OK = "BADTEAM_H_OK";
 export default function heroesReducer(state = dataInicial, action) {
   switch (action.type) {
     case IS_AUTH_SET:
-      console.log(action.payload, "IS_AUTH_SET");
       return { ...state, isAuth: true };
     case SEARCH_H_OK:
       return { ...state, array: action.payload };
@@ -79,64 +78,54 @@ export const detailHeroeAction = (id) => async (dispatch) => {
     console.log(error);
   }
 };
-
 export const addGoodHeroeAction = (id) => async (dispatch) => {
-
-  try {
-    const res = await axios.get("/10159842194449266/" + id);
-    
-      let local = JSON.parse(localStorage.getItem("goodteam"));
-
+  try {  const res = await axios.get("/10159842194449266/" + id);
+        let local = JSON.parse(localStorage.getItem("goodteam"));
       if (local === null) {
-
         dispatch({
           type: GOODTEAM_H_OK,
           payload: res.data,
         });
-
         localStorage.setItem(
           "goodteam",
-
           JSON.stringify([res.data])
         );
       } else if (local.length < 3 && !local.some(hero => hero.id == id)) {
-
         dispatch({
           type: GOODTEAM_H_OK,
           payload: res.data,
         });
-
-          console.log('entré en el else if');
+          console.log('entré en el else if g');
           localStorage.setItem(
             "goodteam",
-  
-            JSON.stringify([...local, res.data])
-          );
-      }
-
+              JSON.stringify([...local, res.data])
+          );      }
   } catch (error) {
     console.log(error);
-  }
-};
+  }};
+
 export const addBadHeroeAction = (id) => async (dispatch) => {
-
-  try {
-    const res = await axios.get("/10159842194449266/" + id);
-
-    dispatch({
-      type: BADTEAM_H_OK,
-      payload: res.data,
-    });
-
+  try {  const res = await axios.get("/10159842194449266/" + id);
     let local = JSON.parse(localStorage.getItem("badteam"));
-
-    console.log(local, "local");
-
+ if (local === null) {
+        dispatch({
+          type: BADTEAM_H_OK,
+          payload: res.data,
+        });    
     localStorage.setItem(
       "badteam",
-
       JSON.stringify([res.data])
-    );
+    );}
+else if (local.length < 3 && !local.some(hero => hero.id == id)) {
+        dispatch({
+          type: BADTEAM_H_OK,
+          payload: res.data,
+        });
+          console.log('entré en el else if b');
+          localStorage.setItem(
+            "badteam",
+              JSON.stringify([...local, res.data])
+          );      }
   } catch (error) {
     console.log(error);
   }
