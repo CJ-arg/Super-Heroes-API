@@ -10,11 +10,8 @@ const Login = () => {
     let history = useHistory();
     const [submitOk, setSubmitOk] = useState(false)
     const dispatch = useDispatch();
-
     const axios = require('axios').default;
-
     const routeChange = () => {
-        console.log(history, "routeChange");
         let path = '/home';
         setTimeout(() => {
             history.push('/home');
@@ -28,7 +25,7 @@ const Login = () => {
                 JSON.stringify(resp.data));
             dispatch(isAuth())
         } catch (err) {
-            console.error(err);
+
         }
     };
     return (
@@ -61,7 +58,6 @@ const Login = () => {
                     }}
                 >
                     {({ values, handleSubmit, touched, handleChange, handleBlur, errors }) => (<form className="form" onSubmit={handleSubmit} >
-                        {console.log(errors)}
                         <div><label htmlFor="email">email</label>
                             <input className="btn btn-outline-secondary  m-1"
                                 type="email"
