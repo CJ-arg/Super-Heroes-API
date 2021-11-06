@@ -44,34 +44,6 @@ button:hover {
   padding-right: 5%;
 }
 
-/* .Nav .rightSide {
-    flex: 50%;
-  }
-  .Nav .rightSide {
-    flex: 50%;
-    display: flex;
-    column-gap: 3%;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 2rem;
-  }
-  .rightSide input {
-    width: 220px;
-    height: 30px;
-    border: none;
-    border-radius: 4px;
-    font-size: 20px;
-    padding-left: 15px;
-    color: crimson;
-  }
-  .rightSide button {
-    width: 70px;
-    height: 32px;
-    border: none;
-    border-radius: 37px;
-    font-size: 16px;
-    background-color: darkgrey;
-  } */
 
 @media only screen and (max-width: 850px) {
   .Nav .leftSide .links a {

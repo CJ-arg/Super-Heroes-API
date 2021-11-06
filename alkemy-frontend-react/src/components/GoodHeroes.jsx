@@ -4,7 +4,6 @@ import "./goodHeroes.css"
 import { Link } from 'react-router-dom'
 
 const GoodHeroes = ({ goodHeroes }) => {
-
   return (
     // <div className='container d-flex justify-content-center align-items-center gap-5 bg-info'>
     <div className="container ">

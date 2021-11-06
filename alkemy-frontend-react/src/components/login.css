@@ -36,7 +36,6 @@
   margin-bottom: 5px;
   color: #1f1f1f;
 }
-
 .form input,
 .form textarea {
   font-family: "Open Sans", sans-serif;
@@ -49,10 +48,8 @@
   color: #6e1111;
   text-align: left;
 }
-
 .form input:focus {
   outline: none;
-  /* border: 2px solid #0085ff; */
 }
 
 .form .error {

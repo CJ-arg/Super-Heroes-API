@@ -7,13 +7,9 @@ import Details from "./Details";
 import "./searchList.css"
 
 const SearcList = () => {
-
   const heroes = useSelector(store => store.searchList.array)
-
   const dispatch = useDispatch();
   return (
-
-
     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4" >
       {heroes &&
         heroes.map(item => (
@@ -39,21 +35,12 @@ const SearcList = () => {
                       className="btn btn-dark btn-sm float-right"
                       onClick={() => dispatch(detailHeroeAction(item.id))}
                     >Info</button></Link>
-
-
-
-
                 </Link>
               </div>
             </div>
           </div>
         ))
       }
-
-
-
-
-
     </div>
   );
 };

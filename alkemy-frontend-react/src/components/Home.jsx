@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import BadHeroes from "./BadHeroes";
 import GetATeam from "./GetATeam";
 import GetBadTeam from "./GetBadTeam";
@@ -15,9 +14,6 @@ const Home = () => {
   const [intelligence, setIntelligence] = useState(0);
   const goodHeroes = useSelector(store => store.searchList.goodOnes)
   const badHeroes = useSelector(store => store.searchList.badOnes)
-  // const goodHeroes = useSelector(store => store.searchList.goodOnes)
-  // console.log(goodHeroes, 'goodHeroes');
-  // const dispatch = useDispatch();
 
   const setProperties = () => {
     if (goodHeroes.length === 3 && badHeroes.length === 3) {
