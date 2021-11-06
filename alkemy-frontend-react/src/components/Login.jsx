@@ -18,13 +18,10 @@ const Login = () => {
         let path = '/home';
         setTimeout(() => {
             history.push('/home');
-
-
         }, 3000);
     }
 
     const sendPostRequest = async (values) => {
-
         try {
             const resp = await axios.post('http://challenge-react.alkemy.org/', values);
             localStorage.setItem("token",
@@ -61,10 +58,6 @@ const Login = () => {
                         sendPostRequest(values)
                         resetForm()
                         setSubmitOk(true)
-                        // setTimeout(() => {
-
-                        //     setSubmitOk(false)
-                        // }, 5000);
                     }}
                 >
                     {({ values, handleSubmit, touched, handleChange, handleBlur, errors }) => (<form className="form" onSubmit={handleSubmit} >

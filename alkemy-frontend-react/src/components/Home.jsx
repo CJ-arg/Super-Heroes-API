@@ -35,7 +35,7 @@ const Home = () => {
   }
   useEffect(() => {
     const dataG = localStorage.getItem('goodteam')
-    console.log(dataG);
+    // console.log(dataG);
     setGoodList(JSON.parse(dataG));
     const dataB = localStorage.getItem('badteam')
     setBadList(JSON.parse(dataB))

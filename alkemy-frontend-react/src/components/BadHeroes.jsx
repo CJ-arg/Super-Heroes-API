@@ -11,7 +11,7 @@ const BadHeroes = ({ badHeroes }) => {
 
                 {badHeroes.length ?
                     badHeroes.map(card => (
-                        <div className="mb-5" key={card.id}  ><Card title={card.name} id={card.id} url={card.image.url} powerstats={card.powerstats} /></div>
+                        <div className="mb-5" key={card.id}  ><Card title={card.name} id={card.id} url={card.image.url} powerstats={card.powerstats} heroLB={badHeroes} /></div>
                     ))
                     :
                     <div className=" contText">
