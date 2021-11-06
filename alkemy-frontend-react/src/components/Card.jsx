@@ -23,20 +23,16 @@ const Card = ({ id, title, url, powerstats, gob, heroLG, heroLB }) => {
                         className="btn btn-outline-secondary btn-sm rounded-0"
                         onClick={() => dispatch(detailHeroeAction(id))}
                     >Details</button></Link>
-                    <a href="#!" className="btn btn-outline-secondary btn-sm rounded-0">Discard</a>
+                    {/* <a href="#!" className="btn btn-outline-secondary btn-sm rounded-0">Discard</a> */}
                 </div>
             </div >
-
             {(heroLG && heroLG.length < 3) ? <div className={(heroLG.length === 2) ? "specialButonTeam3" : "specialButonTeam2"}><Link to='search'><button
                 className="btn btn btn-outline-dark btn-lg center "
             >Search your Good Team</button></Link> </div> : null}
             {(heroLB && heroLB.length < 3) ? <div className={(heroLB.length === 2) ? "specialButonTeam3b" : "specialButonTeam2b"}><Link to='search'><button
                 className="btn btn btn-outline-dark btn-lg center "
             >Search your Bad Team</button></Link> </div> : null}
-
-
         </>
     )
 }
-
 export default Card

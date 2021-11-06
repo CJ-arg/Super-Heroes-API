@@ -3,12 +3,10 @@ import Card from './Card'
 import { Link } from 'react-router-dom'
 
 const BadHeroes = ({ badHeroes }) => {
-
     return (
         // <div className='container d-flex justify-content-center align-items-center gap-5 bg-info'>
         <div className="container">
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 " >
-
                 {badHeroes.length ?
                     badHeroes.map(card => (
                         <div className="mb-5" key={card.id}  ><Card title={card.name} id={card.id} url={card.image.url} powerstats={card.powerstats} heroLB={badHeroes} /></div>
@@ -22,12 +20,9 @@ const BadHeroes = ({ badHeroes }) => {
                                 className="btn btn btn-outline-light btn-lg goToSearch"
                             >Get a BAD Team</button></Link> </div>
                     </div>
-
                 }
             </div>
         </div>
-
     )
 }
-
 export default BadHeroes
