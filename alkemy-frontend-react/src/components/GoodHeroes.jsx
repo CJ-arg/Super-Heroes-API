@@ -1,13 +1,9 @@
+import React from 'react'
 import Card from './Card'
 import "./goodHeroes.css"
-import { useSelector, useDispatch } from 'react-redux'
-import { detailHeroeAction } from "../redux/actionReducers"
-import Search from './Search'
 import { Link } from 'react-router-dom'
 
 const GoodHeroes = ({ goodHeroes }) => {
-  // const goodHeroes = useSelector(store => store.searchList.goodOnes)
-  // const dispatch = useDispatch();
 
   return (
     // <div className='container d-flex justify-content-center align-items-center gap-5 bg-info'>

@@ -1,13 +1,9 @@
 import React from 'react'
 import Card from './Card'
-import { useSelector, useDispatch } from 'react-redux'
-import { detailHeroeAction } from "../redux/actionReducers"
 import { Link } from 'react-router-dom'
 
-const BadHeroes = () => {
-    const badHeroes = useSelector(store => store.searchList.badOnes)
+const BadHeroes = ({ badHeroes }) => {
 
-    const dispatch = useDispatch();
     return (
         // <div className='container d-flex justify-content-center align-items-center gap-5 bg-info'>
         <div className="container">
@@ -27,12 +23,9 @@ const BadHeroes = () => {
                             >Get a BAD Team</button></Link> </div>
                     </div>
 
-
                 }
-
-            </div></div>
-
-
+            </div>
+        </div>
 
     )
 }
